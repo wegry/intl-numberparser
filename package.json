@@ -1,0 +1,42 @@
+{
+  "name": "@wegry/intl-numberparser",
+  "license": "MIT",
+  "version": "1.0.3",
+  "description": "",
+  "source": "index.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wegry/intl-numberparser"
+  },
+  "type": "module",
+  "exports": {
+    "require": "./dist/index.js",
+    "default": "./dist/index.modern.mjs",
+    "types": "./dist/index.d.ts"
+  },
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "microbundle -f modern,esm,cjs",
+    "dev": "microbundle watch",
+    "test": "jest"
+  },
+  "keywords": [
+    "intl",
+    "number",
+    "parser"
+  ],
+  "authors": [
+    "mobostock",
+    "wegry"
+  ],
+  "devDependencies": {
+    "@jest/globals": "^29.7.0",
+    "jest": "^29.7.0",
+    "microbundle": "^0.15.1",
+    "ts-jest": "^29.1.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  }
+}
