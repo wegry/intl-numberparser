@@ -1,0 +1,21 @@
+on:
+  - push
+  - pull_request
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          run_install: |
+            - recursive: true
+              args: [--frozen-lockfile, --strict-peer-dependencies]
+            - args: [--global, gulp, prettier, typescript]
+      - name: build
+        run: pnpm build
